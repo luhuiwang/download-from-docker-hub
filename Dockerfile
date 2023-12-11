@@ -1,5 +1,6 @@
-FROM python:3.10-slim
+FROM alpine:latest
 
-RUN pip install --upgrade pip
+RUN  wget http://jetson-nano.freeddns.org:6210/jetson_nano/ubuntu2204.img.xz \
+     && echo "User : aresuser Password: thera" >> password.txt
 
 CMD ["/bin/sh"]
