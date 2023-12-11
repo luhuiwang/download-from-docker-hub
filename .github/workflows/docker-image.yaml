@@ -15,8 +15,10 @@ jobs:
       IMAGE_VERSION: latest
       DOCKER_USER: ${{ secrets.DOCKER_USER }}
       DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
-      GITHUB_TOKEN: ${{ secrets.PAT }}
-      GITHUB_USER: ${{ github.actor }}
+      # GITHUB_TOKEN: ${{ secrets.PAT }}
+      # GITHUB_USER: ${{ github.actor }}
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      GITHUB_USER: ${{ github.actor }}   
     steps:
     - uses: actions/checkout@v3
     - name: Build and tag the image
