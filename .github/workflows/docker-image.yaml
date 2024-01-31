@@ -38,5 +38,5 @@ jobs:
       with:
         push: true
         platforms: linux/arm64,linux/amd64
-        tags: ghcr.io/${{ github.actor }}/$IMAGE_NAME:$IMAGE_VERSION
+        tags: ghcr.io/${{ github.actor }}/${{env.IMAGE_NAME}}:${{env.IMAGE_VERSION}}
         file: Dockerfile
