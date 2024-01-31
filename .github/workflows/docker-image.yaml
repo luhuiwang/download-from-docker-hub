@@ -19,7 +19,7 @@ jobs:
     - uses: actions/checkout@v3
     - name: Build and tag the image
       run: |
-        docker build . --build-arg URL=${{ secrets.URL }}\
+        docker build . --build-arg URL=${{ secrets.URL }} \
         --tag $DOCKER_USER/$IMAGE_NAME:$IMAGE_VERSION
     - name: Publish to DockerHub
       if: env.DOCKER_PASSWORD != ''
