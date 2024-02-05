@@ -40,7 +40,7 @@ jobs:
         tags: ${{ env.DOCKER_USER }}/${{env.IMAGE_NAME}}:${{env.IMAGE_VERSION}}
         file: Dockerfile
         build-args: |
-          URL: ${{ secrets.URL }}
+          URL=${{ secrets.URL }}
 
     - name: Login to ghcr.io
       uses: docker/login-action@v3
@@ -57,4 +57,4 @@ jobs:
         tags: ghcr.io/${{ github.actor }}/${{env.IMAGE_NAME}}:${{env.IMAGE_VERSION}}
         file: Dockerfile
         build-args: |
-          URL: ${{ secrets.URL }}
+          URL=${{ secrets.URL }}
